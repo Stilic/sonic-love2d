@@ -40,21 +40,22 @@ end
 
 function Object:draw(debug)
     if self.sprite then
-        local x, y, sx, sy, ox, oy = self.x, self.y, 1, 1, self.sprite:getWidth() / 2, self.sprite:getHeight() / 2
+        local x, y, sx, sy, ox, oy = self.x, self.y, 1, 1, self.sprite:getWidth() / 2 + 1,
+            self.sprite:getHeight() / 2 + 1
         if self.flipX then
-            x = x + 3
+            x = x + 1
             sx = -sx
         end
         if self.flipY then
-            y = y + 3
+            y = y + 1
             sy = -sy
         end
-        love.graphics.draw(self.sprite, x+ox, y+oy, self.angle, sx, sy, ox, oy)
+        love.graphics.draw(self.sprite, x + ox, y + oy, self.angle, sx, sy, ox, oy)
     end
     if debug then
         local r, g, b, a = love.graphics.getColor()
         love.graphics.setColor(0.3, 0.8, 0.3, 0.5)
-        love.graphics.rectangle("fill", self.x + math.floor(self.sprite:getWidth() / 2) + 2 - self.widthRadius,
+        love.graphics.rectangle("fill", self.x + math.floor(self.widthRadius / 1.5) + 1,
             self.y, self:getWidth(), self:getHeight())
         love.graphics.setColor(r, g, b, a)
     end

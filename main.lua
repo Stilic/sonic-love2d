@@ -25,15 +25,9 @@ function love.update(dt)
   dt = math.min(dt, 1 / 30)
 end
 
-local yes = false
 function love.keypressed(k)
   if k == "f" then
-    yes = not yes
-    if yes then
-    player.angle = math.rad(90 * 3)
-    else
-    player.angle = math.rad(-90)
-    end
+    player.flipX = not player.flipX
   end
 end
 
