@@ -5,16 +5,21 @@ Player.physicsConfig = {
     pushRadius = 10
 }
 
-function Player:new(name)
+function Player:new(name, x, y)
+    Player.super.new(self, x, y)
+
     self.name = name
     self.widthRadius = 9
     self.heightRadius = 19
+    self.hitboxWidthRadius = 8
+    self.hitboxHeightRadius = self.heightRadius - 3
     self.jumpForce = 6.5
+    self.sprite = love.graphics.newImage("assets/images/sonic.png")
 
     if name == "sonic" then
         -- jumping/rolling
-        self.widthRadius = 7
-        self.heightRadius = 14
+        -- self.widthRadius = 7
+        -- self.heightRadius = 14
     elseif name == "tails" then
         -- standing
         self.widthRadius = 9
