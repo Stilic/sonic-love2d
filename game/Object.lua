@@ -56,7 +56,7 @@ function Object:draw(debug)
         local r, g, b, a = love.graphics.getColor()
         love.graphics.setColor(0.3, 0.8, 0.3, 0.5)
         love.graphics.rectangle("fill", self.x + math.floor(self.widthRadius / 1.5) + 1,
-            self.y, self:getWidth(), self:getHeight())
+            self.y, 1, self:getHeight())
         love.graphics.setColor(r, g, b, a)
     end
 end
