@@ -25,12 +25,12 @@ function Player:new(name, x, y)
         self.widthRadius = 9
         self.heightRadius = 15
         -- jumping/rolling
-        self.widthRadius = 7
-        self.heightRadius = 14
+        -- self.widthRadius = 7
+        -- self.heightRadius = 14
     elseif name == "knuckles" then
         -- gliding/climbing/sliding
-        self.widthRadius = 10
-        self.heightRadius = 10
+        -- self.widthRadius = 10
+        -- self.heightRadius = 10
 
         self.jumpForce = 6
     end
