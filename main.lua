@@ -8,6 +8,10 @@ Player = require "game.Player"
 -- TODO: move this in a better place
 love.graphics.setDefaultFilter("nearest", "nearest")
 
+function math.sign(x)
+  return x > 0 and 1 or x < 0 and -1 or 0
+end
+
 local player = Player("sonic")
 
 function love.load()
@@ -23,6 +27,7 @@ end
 
 function love.update(dt)
   dt = math.min(dt, 1 / 30)
+  player:update(dt)
 end
 
 function love.keypressed(k)
@@ -34,6 +39,6 @@ end
 function love.draw()
   rs.start()
   love.graphics.clear(0.4, 0.4, 0.2)
-  player:draw(true)
+  player:draw()
   rs.stop()
 end
