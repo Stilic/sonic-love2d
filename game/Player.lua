@@ -1,11 +1,6 @@
 local Player = Object:extend()
 
-Player.physicsConfig = {
-    gravityForce = 0.21875,
-    pushRadius = 10
-}
-
-local left, right = "a", "z"
+local left, right = "a", "d"
 
 function Player:new(name, x, y)
     Player.super.new(self, x, y)
